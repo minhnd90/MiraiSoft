@@ -5,10 +5,25 @@ const counter = useCounterStore();
 </script>
 
 <template>
-  <div class="about" @click.self="counter.increment">
-    <VTextField variant="outlined" density="compact" label="Clicked" v-model="counter.count" hide-details readonly></VTextField>
-    <VTextField variant="outlined" density="compact" label="Doubled" v-model="counter.doubleCount" hide-details readonly></VTextField>
-    <VBtn variant="tonal" height="40" density="compact" rounded="0" @click="counter.$patch({ count: 0 })">Reset</VBtn>
+  <div class="about">
+    <VContainer>
+      <VRow>
+        <VCol>
+          <VTextField variant="outlined" density="compact" label="Clicked" hide-details disabled readonly v-model="counter.count"></VTextField>
+        </VCol>
+        <VCol>
+          <VTextField variant="outlined" density="compact" label="Doubled" hide-details disabled readonly v-model="counter.doubleCount"></VTextField>
+        </VCol>
+      </VRow>
+      <VRow>
+        <VCol>
+          <VBtn variant="outlined" rounded="0" height="42" color="#34495e" theme="dark" block @click="counter.increment">Add</VBtn>
+        </VCol>
+        <VCol>
+          <VBtn variant="outlined" rounded="0" height="42" color="#34495e" theme="dark" block @click="counter.$patch({ count: 0 })">Reset</VBtn>
+        </VCol>
+      </VRow>
+    </VContainer>
   </div>
 </template>
 
