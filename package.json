@@ -23,6 +23,7 @@
     "sass": "^1.60.0",
     "sass-loader": "^13.2.2",
     "typescript": "^5.0.2",
-    "vue-tsc": "^1.2.0"
+    "vue-tsc": "^1.2.0",
+    "webpack": "^5.0.0"
   }
 }
