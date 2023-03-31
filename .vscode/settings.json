@@ -1,0 +1,5 @@
+{
+    "remote.autoForwardPortsSource": "process",
+    "remote.autoForwardPorts": true,
+    "editor.tabSize": 2
+}

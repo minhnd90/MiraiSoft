@@ -1,8 +1,6 @@
 <template>
   <div class="hello">
-    <ContentSlot :use="$slots.default">
-      Hello World
-    </ContentSlot>
+    <ContentSlot :use="$slots.default" />
   </div>
 </template>
 
