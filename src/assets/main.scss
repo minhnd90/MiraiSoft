@@ -1,5 +1,5 @@
-@use 'vuetify' with (
-  $color-pack: false
+@forward 'vuetify' with (
+  $color-pack: true
 );
 
 @import 'base';
