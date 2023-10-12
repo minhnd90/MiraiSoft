@@ -1,5 +1,5 @@
-import { createVuetify, type ThemeDefinition, type VuetifyOptions } from 'vuetify'
 import 'vuetify/styles'
+import { createVuetify, type ThemeDefinition, type VuetifyOptions } from 'vuetify'
 // @ts-ignore
 import colors from 'vuetify/lib/util/colors.mjs'
 
@@ -28,7 +28,6 @@ const vuetifyOptions: VuetifyOptions = {
   theme: {
     defaultTheme: 'light',
     themes: { light }
-  }
+  },
 }
-const vuetify = createVuetify(vuetifyOptions)
-export default vuetify
+export default createVuetify(vuetifyOptions)

@@ -3,7 +3,7 @@
 <template>
   <VNavigationDrawer>
     <div class="d-flex justify-center py-8">
-      <VBtn color="primary" class="text-none">Import documents</VBtn>
+      <VBtn color="primary" class="text-none font-weight-bold" size="large">Import documents</VBtn>
     </div>
     <VListItem title="My Application" subtitle="Vuetify" to="/"></VListItem>
     <VDivider />
