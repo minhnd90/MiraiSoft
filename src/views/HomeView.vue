@@ -1,9 +1,11 @@
 <script setup lang="ts">
-import TheWelcome from '../components/TheWelcome.vue'
+import { useCssModule } from 'vue'
+import TheWelcome from '@/components/TheWelcome.vue'
+useCssModule('classes')
 </script>
 
 <template>
-  <main>
-    <TheWelcome />
-  </main>
+  <TheWelcome />
 </template>
+
+<style module="classes" lang="scss"></style>

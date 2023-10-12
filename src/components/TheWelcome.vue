@@ -1,40 +1,31 @@
 <script setup lang="ts">
+import { onMounted, ref } from 'vue'
 import WelcomeItem from './WelcomeItem.vue'
-import DocumentationIcon from './icons/IconDocumentation.vue'
-import ToolingIcon from './icons/IconTooling.vue'
-import EcosystemIcon from './icons/IconEcosystem.vue'
-import CommunityIcon from './icons/IconCommunity.vue'
-import SupportIcon from './icons/IconSupport.vue'
+
+const box = ref<null | HTMLElement>(null)
+onMounted(() => {
+  box.value?.addEventListener('click', () => {
+    box.value?.classList.toggle('show')
+  })
+})
 </script>
 
 <template>
   <WelcomeItem>
-    <template #icon>
-      <DocumentationIcon />
-    </template>
     <template #heading>Documentation</template>
-
     Vue’s
     <a href="https://vuejs.org/" target="_blank" rel="noopener">official documentation</a>
     provides you with all information you need to get started.
   </WelcomeItem>
 
   <WelcomeItem>
-    <template #icon>
-      <ToolingIcon />
-    </template>
     <template #heading>Tooling</template>
 
-    This project is served and bundled with
-    <a href="https://vitejs.dev/guide/features.html" target="_blank" rel="noopener">Vite</a>. The
-    recommended IDE setup is
-    <a href="https://code.visualstudio.com/" target="_blank" rel="noopener">VSCode</a> +
-    <a href="https://github.com/johnsoncodehk/volar" target="_blank" rel="noopener">Volar</a>. If
-    you need to test your components and web pages, check out
-    <a href="https://www.cypress.io/" target="_blank" rel="noopener">Cypress</a> and
-    <a href="https://on.cypress.io/component" target="_blank" rel="noopener"
-      >Cypress Component Testing</a
-    >.
+    <div class="box" ref="box">
+      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cupiditate explicabo eum veniam
+      exercitationem, consequuntur eius eos. Omnis illum magnam rem, ut recusandae labore fugit sunt
+      consequatur dicta facilis placeat aut!
+    </div>
 
     <br />
 
@@ -42,9 +33,6 @@ import SupportIcon from './icons/IconSupport.vue'
   </WelcomeItem>
 
   <WelcomeItem>
-    <template #icon>
-      <EcosystemIcon />
-    </template>
     <template #heading>Ecosystem</template>
 
     Get official tools and libraries for your project:
@@ -58,9 +46,6 @@ import SupportIcon from './icons/IconSupport.vue'
   </WelcomeItem>
 
   <WelcomeItem>
-    <template #icon>
-      <CommunityIcon />
-    </template>
     <template #heading>Community</template>
 
     Got stuck? Ask your question on
@@ -76,9 +61,6 @@ import SupportIcon from './icons/IconSupport.vue'
   </WelcomeItem>
 
   <WelcomeItem>
-    <template #icon>
-      <SupportIcon />
-    </template>
     <template #heading>Support Vue</template>
 
     As an independent project, Vue relies on community backing for its sustainability. You can help
@@ -86,3 +68,18 @@ import SupportIcon from './icons/IconSupport.vue'
     <a href="https://vuejs.org/sponsor/" target="_blank" rel="noopener">becoming a sponsor</a>.
   </WelcomeItem>
 </template>
+
+<style lang="scss" scoped>
+.box {
+  width: 200px;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  transition: all 0.3s ease-in-out ;
+
+  &.show {
+    display: block;
+  }
+}
+</style>
