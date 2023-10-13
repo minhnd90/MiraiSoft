@@ -1,15 +1,17 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import SidebarTree from '@/components/SidebarTree.vue'
+import { useFoldersStore } from '@/stores/folders'
+const { folders } = useFoldersStore()
+</script>
 
 <template>
   <VNavigationDrawer>
     <div class="d-flex justify-center py-8">
       <VBtn color="primary" class="text-none font-weight-bold" size="large">Import documents</VBtn>
     </div>
-    <VListItem title="My Application" subtitle="Vuetify" to="/"></VListItem>
-    <VDivider />
-    <VListItem link title="List Item 1" to="/page1"></VListItem>
-    <VListItem link title="List Item 2" to="/page2"></VListItem>
-    <VListItem link title="List Item 3" to="/page3"></VListItem>
+    <VList density="compact" nav mandatory>
+      <SidebarTree :items="folders" :sub-group="false" />
+    </VList>
   </VNavigationDrawer>
 </template>
 

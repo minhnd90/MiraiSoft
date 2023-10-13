@@ -1,5 +1,12 @@
+import '@mdi/font/css/materialdesignicons.css'
+import {
+  createVuetify,
+  type DisplayThresholds,
+  type ThemeDefinition,
+  type VuetifyOptions
+} from 'vuetify'
+import { aliases, mdi } from 'vuetify/iconsets/mdi'
 import 'vuetify/styles'
-import { createVuetify, type ThemeDefinition, type VuetifyOptions } from 'vuetify'
 // @ts-ignore
 import colors from 'vuetify/lib/util/colors.mjs'
 
@@ -9,25 +16,22 @@ const light: ThemeDefinition = {
     primary: colors.blue.accent3
   }
 }
+const thresholds: Partial<DisplayThresholds> = {
+  xs: 0,
+  sm: 480,
+  md: 720,
+  lg: 920,
+  xl: 1440,
+  xxl: 1600
+}
+const icons = {
+  defaultSet: 'mdi',
+  aliases,
+  sets: { mdi }
+}
 const vuetifyOptions: VuetifyOptions = {
-  defaults: {
-    VBtn: {
-      class: 'text-none'
-    }
-  },
-  display: {
-    mobileBreakpoint: 'sm',
-    thresholds: {
-      xs: 0,
-      sm: 480,
-      md: 920,
-      lg: 1140,
-      xl: 1600
-    }
-  },
-  theme: {
-    defaultTheme: 'light',
-    themes: { light }
-  },
+  display: { thresholds },
+  theme: { themes: { light } },
+  icons
 }
 export default createVuetify(vuetifyOptions)

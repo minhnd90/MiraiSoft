@@ -76,7 +76,7 @@ onMounted(() => {
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
-  transition: all 0.3s ease-in-out ;
+  transition: all 0.3s ease-in-out;
 
   &.show {
     display: block;

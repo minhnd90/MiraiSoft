@@ -1,3 +1,5 @@
 @use 'vuetify/settings' with (
-  $button-text-letter-spacing: initial
+  $button-text-letter-spacing: initial,
+  $list-item-icon-margin-end: 1rem,
+  $list-item-icon-margin-start: 1rem
 );
